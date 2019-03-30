@@ -110,6 +110,9 @@ function getTrack() {
     });
      
      var result = JSON.parse(response.getContentText());
+     delete result['album']['available_markets'];
+     delete result['available_markets'];
+     delete result['external_urls'];
      Logger.log(JSON.stringify(result, null, 2));
      var features = JSON.stringify(result, null, 2);
      
